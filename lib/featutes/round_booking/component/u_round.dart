@@ -72,10 +72,8 @@ class _URoundState extends ConsumerState<URound> {
                                   onPressed: () {
                                     dataRoom.seat[index].sttus =
                                         !dataRoom.seat[index].sttus;
-                                    dataRoom.seat.forEach((element) {
-                                      print(element.sttus);
-                                    });
 
+                                    print(dataRoom.seat[index].value);
                                     setState(() {});
                                   },
                                   child: Icon(Icons.person,

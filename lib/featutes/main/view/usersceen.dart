@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utils/services/local_storage.dart';
 import '../../animal/views/list_of_animals.dart';
 import '../../auth/controler/login_controller.dart';
 import '../../room_animal/views/u_room.dart';
 import '../../round_booking/component/u_select_round.dart';
+import '../controller/customer_controller.dart';
 import '../controller/provider.dart';
 
 class UserScreen extends ConsumerStatefulWidget {
@@ -34,7 +34,7 @@ class _UserScreenState extends ConsumerState<UserScreen> {
         actions: [
           IconButton(
               onPressed: () async {
-                print(await LocalStorage.instance.getDBAdmin());
+                print(ref.watch(customerProvider).value?.username);
               },
               icon: const Icon(Icons.accessibility_new_sharp))
         ],
